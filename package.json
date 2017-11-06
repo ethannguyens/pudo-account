@@ -1,0 +1,16 @@
+{
+  "name": "pudo-account",
+  "version": "1.0.0",
+  "description": "User profile with nodejs and couchbase",
+  "main": "app.js",
+  "repository": "git@github.com:ethannguyens/pudo-account.git",
+  "author": "ethan.nguyen <ethan.nguyens@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "couchbase": "^2.4.1",
+    "express": "^4.16.2",
+    "uuid": "^3.1.0"
+  }
+}
