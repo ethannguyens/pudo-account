@@ -11,7 +11,7 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
 const cluster = new Couchbase.Cluster("couchbase://localhost");
-const bucket = cluster.openBucket("default", "");
+const bucket = cluster.openBucket("user", "83cf6289f35e10e94ef9e62df0f7ba25");
 
 const server = app.listen(3000, () => {
   console.log("Listening on port " + server.address().port + "...");

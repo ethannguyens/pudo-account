@@ -12,5 +12,12 @@
     "couchbase": "^2.4.1",
     "express": "^4.16.2",
     "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "expect": "^21.2.1",
+    "mocha": "^4.0.1"
   }
 }
