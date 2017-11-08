@@ -1,5 +1,5 @@
 import expect from 'expect';
-import * as accountValidation from 'accountValidation';
+import * as accountValidation from './accountValidation';
 
 describe('accountValidation', () => {
   it('should return true for valid email address', () => {

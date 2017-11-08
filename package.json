@@ -6,6 +6,9 @@
   "repository": "git@github.com:ethannguyens/pudo-account.git",
   "author": "ethan.nguyen <ethan.nguyens@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha */*.test.js --compilers js:babel-register --reporter spec"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
@@ -14,6 +17,10 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",

@@ -1,3 +1,5 @@
+import {validateEmail, validatePassword} from "./validation/accountValidation";
+
 const Couchbase = require("couchbase");
 const Express = require("express");
 const UUID = require("uuid");
@@ -19,8 +21,10 @@ const server = app.listen(3000, () => {
 
 //POST /account creating – Create a new user profile with account information
 app.post("/account", (request, response) => {
-  if(!request.body.email) return response.status(401).send({ "message": "An `email` is required" });
-  else if(!request.body.password) return response.status(401).send({ "message": "A `password` is required" });
+  if(!request.body.email || !request.body.password) return response.status(401).send({ "message": "An `email`/`password`  is required" });
+  else {
+    if (!validateEmail(request.body.email) || !validatePassword(request.body.password)) return response.status(401).send({ "message": "An `email`/`password`  is not correct" });
+  }
 
   const id = UUID.v4();
   const account = {
@@ -37,9 +41,7 @@ app.post("/account", (request, response) => {
   delete profile.password;
 
   bucket.insert(id, profile, (error, result) => {
-    if(error) {
-      return response.status(500).send(error);
-    }
+    if(error) return response.status(500).send(error);
     bucket.insert(request.body.email, account, (error, result) => {
       if(error) {
         bucket.remove(id);
